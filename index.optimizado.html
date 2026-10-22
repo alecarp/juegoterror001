@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La biblioteca olvidada - juego de terror">
+  <title>La biblioteca olvidada</title>
+  
+  <!-- Preconnect para CDNs -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes con display=swap (no bloqueante) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS preload + carga no bloqueante -->
+  <link rel="preload" href="styles.optimizado.css" as="style">
+  <link rel="stylesheet" href="styles.optimizado.css">
+  
+  <!-- Importmap para ESM - permite tree-shaking -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://cdn.jsdelivr.net/npm/react@18.3.1/+esm",
+      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/+esm",
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- Módulos ES - carga asíncrona y cacheable -->
+  <script type="module" src="sounds.optimizado.js"></script>
+  <script type="module" src="scripts.optimizado.js"></script>
+</body>
+</html>
